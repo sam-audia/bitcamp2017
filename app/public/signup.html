@@ -164,10 +164,64 @@
                 <label class="form-label">Credit Card Number</label>
                 <input type="text" class="form-control" id="creditcardnumber" placeholder="Card Number" name="creditcardnumber" pattern="[0-9]{13,16}" />
               </div>
+              <div class="row">
+                <div class="form-group col-sm-6">
+                  <label class="form-label">Name</label>
+                  <input type="text" class="form-control" name="cardname" id="cardname" placeholder="Name" />
+                </div>
+                <div class="form-group col-sm-4">
+                  <label class="form-label">Date</label>
+                  <input type="month" name="expdate" id="expdate" class="form-control" />
+                </div>
+                <div class="form-group col-sm-2">
+                  <label class="form-label">CVV</label>
+                  <input type="text" class="form-control" name="cvv" id="cvv" placeholder="CVV" />
+                </div>
+              </div>
             </div>
 
             <div class="col-sm-6">
+                <div class="card">
+                  <h3 class="card-header">Credit Card Info</h3>
+                  <div class="card-block">
+                    <h4 class="card-title">Tell us your credit card information</h4>
+                    <p class="card-text"></p>
+                  </div>
+                </div>
+            </div>
+          </div>
 
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="row">
+                <div class="form-group col-sm-6">
+                  <label class="form-label">Amount</label>
+                  <input type="number" name="amount" id="amount" class="form-control" min="0.01" step="0.01" max="2500" value="10.00" />
+                </div>
+                <div class="form-group col-sm-6">
+                  <label class="from-label">Frequency</label>
+                  <select class="form-control" id="frequency" name="frequency">
+                    <option value="Weekly">Weekly</option>
+                    <option value="Monthly">Monthly</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-6">
+              <div class="card">
+                <h3 class="card-header">Saving</h3>
+                <div class="card-block">
+                  <h4 class="card-title">How much would you like to save?</h4>
+                  <p class="card-text">Depending on your frequency and amount choice we will charge you every month so you can start saving</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-12">
+              <button type="submit" class="btn btn-primary">Create Account</button>
             </div>
           </div>
 
