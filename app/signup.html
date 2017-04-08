@@ -25,25 +25,32 @@
               <div class="row">
                 <div class="col-sm-6 form-group">
                   <label class="col-form-label">First</label>
-                  <input type="text" name="firstname" class="form-control" id="firstname" placeholder="First" />
+                  <input type="text" name="firstname" class="form-control" id="firstname" placeholder="First" required />
                 </div>
                 <div class="col-sm-6 form-group">
                   <label class="col-form-label">Last</label>
-                  <input type="text" name="lastname" class="form-control" id="lastname" placeholder="Last" />
+                  <input type="text" name="lastname" class="form-control" id="lastname" placeholder="Last" required />
                 </div>
               </div>
+
+							<div class="row">
+								<div class="col-sm-12 form-group">
+									<label for="username">Username</label>
+									<input type="text" name="username" id="username" class="form-control" placeholder="user123" />
+								</div>
+							</div>
 
               <div class="row">
                 <div class="col-sm-12 form-group">
                   <label class="col-form-label">Email</label>
-                  <input type="email" name="email" class="form-control" id="email" placeholder="example@gmail.com" />
+                  <input type="email" name="email" class="form-control" id="email" placeholder="example@gmail.com" required=""/>
                 </div>
               </div>
 
               <div class="row">
                 <div class="col-sm-12 form-group">
                   <label class="col-form-label">Password</label>
-                  <input type="password" name="password" class="form-control" id="password" />
+                  <input type="password" name="password" class="form-control" id="password" required/>
                   <small class="form-text text-muted">Please use fake password as this is not encrypted</small>
                 </div>
               </div>
@@ -67,7 +74,7 @@
             <div class="col-sm-6">
               <div class='form-group'>
                 <label class="form-label">Address Line 1</label>
-                <input class="form-control" name="address1" type="text" id="address1" placeholder="Address" />
+                <input class="form-control" name="address1" type="text" id="address1" placeholder="Address" required/>
               </div>
               <div class='form-group'>
                 <label class="form-label">Address Line 2</label>
@@ -76,11 +83,11 @@
               <div class="row">
                 <div class="form-group col-sm-6">
                   <label class="form-label">City</label>
-                  <input type="text" id="city" name="city" class="form-control" placeholder="City"/>
+                  <input type="text" id="city" name="city" class="form-control" placeholder="City" required/>
                 </div>
                 <div class="form-group col-sm-6">
                   	<label for="state" class="control-label">State</label>
-                  	<select class="form-control" id="state" name="state">
+                  	<select class="form-control" id="state" name="state" required>
                   			<option value="">N/A</option>
                   			<option value="AK">Alaska</option>
                   			<option value="AL">Alabama</option>
@@ -140,7 +147,7 @@
               <div class="row">
                 <div class="form-group col-sm-4">
                   <label class="control-label">Zip</label>
-                  <input type="text" class="form-control" name="zip" id="zip" placeholder="Zip" />
+                  <input type="text" class="form-control" name="zip" id="zip" placeholder="Zip" required/>
                 </div>
                 <div class="col-sm-8">
                 </div>
@@ -162,20 +169,20 @@
             <div class="col-sm-6">
               <div class="form-group">
                 <label class="form-label">Credit Card Number</label>
-                <input type="text" class="form-control" id="creditcardnumber" placeholder="Card Number" name="creditcardnumber" pattern="[0-9]{13,16}" />
+                <input type="text" class="form-control" id="creditcardnumber" placeholder="Card Number" name="creditcardnumber" pattern="[0-9]{13,16}" required/>
               </div>
               <div class="row">
                 <div class="form-group col-sm-6">
                   <label class="form-label">Name</label>
-                  <input type="text" class="form-control" name="cardname" id="cardname" placeholder="Name" />
+                  <input type="text" class="form-control" name="cardname" id="cardname" placeholder="Name" required/>
                 </div>
                 <div class="form-group col-sm-4">
                   <label class="form-label">Date</label>
-                  <input type="month" name="expdate" id="expdate" class="form-control" />
+                  <input type="month" name="expdate" id="expdate" class="form-control" required/>
                 </div>
                 <div class="form-group col-sm-2">
                   <label class="form-label">CVV</label>
-                  <input type="text" class="form-control" name="cvv" id="cvv" placeholder="CVV" />
+                  <input type="text" class="form-control" name="cvv" id="cvv" placeholder="CVV" required/>
                 </div>
               </div>
             </div>
@@ -196,11 +203,11 @@
               <div class="row">
                 <div class="form-group col-sm-6">
                   <label class="form-label">Amount</label>
-                  <input type="number" name="amount" id="amount" class="form-control" min="0.01" step="0.01" max="2500" value="10.00" />
+                  <input type="number" name="amount" id="amount" class="form-control" min="0.01" step="0.01" max="2500" value="10.00  required/>
                 </div>
                 <div class="form-group col-sm-6">
                   <label class="from-label">Frequency</label>
-                  <select class="form-control" id="frequency" name="frequency">
+                  <select class="form-control" id="frequency" name="frequency" required>
                     <option value="Weekly">Weekly</option>
                     <option value="Monthly">Monthly</option>
                   </select>

@@ -31,7 +31,11 @@ app.get('/login', function(req, res) {
 })
 
 app.post('/login', function(req, res) {
-	console.log(req.body);
+	db.collection('users').save(req.body, (err, result) => {
+		if (err) return console.log(err);
+
+		res.redirect('/app/user/' + req.body.email);
+	})
 });
 
 app.use('/', express.static('app/public'))
