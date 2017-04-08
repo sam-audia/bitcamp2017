@@ -1,0 +1,61 @@
+/*
+* === index.html ===
+*/
+
+div#splash {
+  background-image: url("fabian-blank-78637.jpg");
+  background-color: #333333;
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+}
+
+.container {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+div#footer {
+  height: 20vh;
+  background-color: #efefef;
+  width: 100vw;
+  background-size: cover;
+}
+
+div#front-info {
+  top: 20vh;
+  left: 10vw;
+  font-size: 2em;
+  position: relative;
+}
+
+div.#front-info h1 {
+  font-size: 4em;
+}
+
+.cursive-font {
+  font-family: 'Pacifico', cursive;
+}
+
+#bitcamp-logo {
+  position: relative;
+  height: 15vh;
+  width: auto;
+  top: 2.5vh;
+  left: 30vw;
+}
+
+/*
+* === signup.html ===
+*/
+
+div#top {
+  width: 100vw;
+  height: auto;
+  background: #ccc;
+  margin-bottom: 10vh;
+}
