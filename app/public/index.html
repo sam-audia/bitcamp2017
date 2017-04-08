@@ -11,13 +11,17 @@
 
 		<div class="row" id="splash">
 
+			<div id="triangle">
+				<img src="bitcamp-logo.png" id="bitcamp-logo" />
+			</div>
+
 			<div class="col-6">
 				<div id="front-info">
 					<h1 class="cursive-font" style="font-size:4.5rem">Piggy Bank</h1>
 				</br>
 				<p>It does stuff and things yeah!</p>
-				<a href="/signup.html" class="btn btn-primary">Sign Up</a>
-				
+				<a href="/login" class="btn btn-primary">Sign Up</a>
+
 				<!-- Login modal trigger button -->
 				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Login</button>
 
@@ -35,14 +39,16 @@
 
 								<!-- Form to collect login credentials -->
 								<form>
-								  Email:<br>
-								  <input type="text" name="Email">
-								  <br>
-								  Password:<br>
-								  <input type="text" name="Password">
-								  <br><br>
-								  <input type="submit" value="Login" class="btn btn-primary" data-dismiss="modal">
-								</form> 
+									<div class="form-group">
+									  <label class="form-label">Email</label>
+								  	<input type="email" class="form-control" name="email" id="email" placeholder="example@gmail.com">
+									</div>
+								  <div class="form-group">
+									  <label class="form-label">Password</label>
+									  <input type="password" name="password" id="email" class="form-control" />
+									</div>
+								  <input type="submit" value="Login" class="btn btn-primary" data-dismiss="modal" />
+								</form>
 							</div>
 						</div>
 
@@ -53,14 +59,6 @@
 		</div>
 
 		<div class="col-6">
-		</div>
-
-	</div>
-
-	<div class="row" id="footer">
-
-		<div class="col-12">
-			<img id="bitcamp-logo" src="bitcamp-logo.png" />
 		</div>
 
 	</div>

@@ -5,12 +5,14 @@
   "main": "index.js",
   "scripts": {
     "test": "",
-    "start": "node server.js",
+    "start": "nodemon server.js",
     "lint": "eslint app"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.17.1",
+    "mongodb": "^2.2.25",
     "nodemon": "^1.11.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
