@@ -32,18 +32,40 @@ div#top {
 	font-family: "Pacifico", sans-serif;
 }
 
-#login-container {
-	margin-top: 15vh;
+#first-login-section {
+	padding-top: 15vh;
+}
+
+#second-login-section {
+	padding-top: 25vh;
+}
+
+#third-login-section {
+	padding-top: 25vh;
+}
+
+#fourth-login-section {
+	padding-top: 22vh;
 }
 
 #button-container {
-	align-content: center;
-	align-items: center;
 	text-align: center;
 }
 
-#card-container {
+#card-container1 {
 	margin-top: 10vh;
+}
+
+#card-container2 {
+	margin-top: 5vh;
+}
+
+#card-container3 {
+	margin-top: 5vh;
+}
+
+#card-container4 {
+	margin-top: 5vh;
 }
 
 .create-button {
@@ -54,4 +76,5 @@ div#top {
 	text-align: center;
 	font-family: "Pacifico", sans-serif;
 	margin-top: 15vh;
+	border-radius: 15px;
 }

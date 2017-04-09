@@ -46,10 +46,10 @@
 
     <div class="row" id="first-login-section">
 
-      <div class="col-sm-11">
+      <div class="col-sm-12">
         <form action"/login" method="POST">
 
-          <div class="row" style="height:80vh" id="login-container">
+          <div class="row login-container" style="height:80vh">
             <div class="col-sm-6">
 
               <div class="row">
@@ -92,7 +92,7 @@
             </div>
 
           </div>
-          <div class="col-sm-6" style="height:80vh" id="card-container">
+          <div class="col-sm-6" id="card-container1">
             <div class="card">
               <h3 class="card-header">Basic Info</h3>
               <div class="card-block">
@@ -100,12 +100,10 @@
                 <p class="card-text">Add your login credentials to create an account!<br>Let's start saving and reaching goals together.</p>
               </div>
             </div>
-
           </div>
-
         </div>
 
-        <div class="row" style="height:100vh" id="second-login-section" id="login-container">
+        <div class="row login-container" style="height:100vh" id="second-login-section">
           <div class="col-sm-6">
             <div class='form-group'>
               <label class="form-label">Address Line 1</label>
@@ -195,25 +193,24 @@
           </div>
         </div>
 
-        <div class="col-sm-6" id="login-container">
+        <div class="col-sm-6" id="card-container2">
           <div class="card">
             <h3 class="card-header">Billing Info</h3>
             <div class="card-block">
-              <h4 class="card-title">Tell us your billing address</h4>
-              <p class="card-text"></p>
+              <h4 class="card-title">Ready to Save?</h4>
+              <p class="card-text">Enter your billing address so that we can charge your card appropriately.</p>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="row" id="third-login-section">
-        <div class="col-sm-6" style="height:100vh" id="login-container">
+      <div class="row login-container" style="height:100vh" id="third-login-section">
+        <div class="col-sm-6">
           <div class="form-group">
             <label class="form-label">Credit Card Number</label>
             <input type="text" class="form-control" id="creditcardnumber" placeholder="Card Number" name="creditcardnumber" pattern="[0-9]{13,16}" required/>
           </div>
           <div class="row">
-<<<<<<< HEAD
             <div class="form-group col-sm-6">
               <label class="form-label">Name</label>
               <input type="text" class="form-control" name="cardname" id="cardname" placeholder="Name" required/>
@@ -225,22 +222,6 @@
             <div class="form-group col-sm-2">
               <label class="form-label">CVV</label>
               <input type="text" class="form-control" name="cvv" id="cvv" placeholder="CVV" required/>
-=======
-            <div class="col-sm-6">
-              <div class="row">
-                <div class="form-group col-sm-6">
-                  <label class="form-label">Amount</label>
-                  <input type="number" name="amount" id="amount" class="form-control" min="0.01" step="0.01" max="2500" value="10.00"  required/>
-                </div>
-                <div class="form-group col-sm-6">
-                  <label class="from-label">Frequency</label>
-                  <select class="form-control" id="frequency" name="frequency" required>
-                    <option value="Weekly">Weekly</option>
-                    <option value="Monthly">Monthly</option>
-                  </select>
-                </div>
-              </div>
->>>>>>> origin/master
             </div>
           </div>
 
@@ -251,19 +232,19 @@
           </div>
         </div>
 
-        <div class="col-sm-6" id="login-container">
+        <div class="col-sm-6" id="card-container3">
           <div class="card">
             <h3 class="card-header">Credit Card Info</h3>
             <div class="card-block">
-              <h4 class="card-title">Tell us your credit card information</h4>
-              <p class="card-text"></p>
+              <h4 class="card-title">Choose your card!</h4>
+              <p class="card-text">Enter your credit card info to select which card you'll be using to save.</p>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="row" id="fourth-login-section">
-        <div class="col-sm-6" style="height:100vh" id="login-container">
+      <div class="row login-container" style="height:100vh" id="fourth-login-section">
+        <div class="col-sm-6">
           <div class="row">
             <div class="form-group col-sm-6">
               <label class="form-label">Amount</label>
@@ -286,12 +267,12 @@
 
         </div>
 
-        <div class="col-sm-6" id="login-container">
+        <div class="col-sm-6" id="card-container4">
           <div class="card">
             <h3 class="card-header">Saving</h3>
             <div class="card-block">
-              <h4 class="card-title">How much would you like to save?</h4>
-              <p class="card-text">Depending on your frequency and amount choice we will charge you every month so you can start saving</p>
+              <h4 class="card-title">How much are you saving?</h4>
+              <p class="card-text">How much do you want to save and how often? Let us know so that we can create the right plan for you.</p>
             </div>
           </div>
         </div>
@@ -300,8 +281,6 @@
 
     </form>
   </div>
-
-  <div class="col-sm-1" style="background: #ccc;">a</div>
 
 </div>
 </div>
