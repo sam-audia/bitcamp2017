@@ -34,8 +34,10 @@ app.get('/login', function(req, res) {
 })
 
 app.get('/users/goals', function(req, res) {
-	var uid = req.cookies.uid;
-	res.send(uid);
+	db.collection('goals').find({"uid": req.cookies.uid}).toArray((err, docs) => {
+		res.send(JSON.stringify(docs));
+	})
+
 })
 
 app.post('/users/goals', function(req, res) {

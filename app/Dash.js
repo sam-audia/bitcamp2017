@@ -1,14 +1,60 @@
 import React, { Component } from 'react';
+var axios = require('axios');
 
 class DashAdd extends Component {
 	constructor(props) {
 		super(props);
+		this.state = {editing: false};
+
+		this.toggleEdit = this.toggleEdit.bind(this);
+	}
+
+	toggleEdit (e) {
+		e.preventDefault();
+		this.setState(prevState => ({
+      editing: !prevState.editing
+    }));
 	}
 
 	render() {
 		return (
+			<div>
+				{this.state.editing &&
+					<div className="card">
+						<div className="card-block">
+							<form action="/users/goals" method="post">
+								<div className="form-group">
+									<label>Goal Item</label>
+									<input type="text" name="itemname" id="itemname" className="form-control" placeholder="Item" />
+								</div>
+								<div className="form-group">
+									<label>Note</label>
+									<input type="text" name="tasknote" id="tasknote" className="form-control" placeholder="Note" />
+								</div>
+								<div className="form-group">
+									<label>Goal Amount</label>
+									<input type="number" name="goalamt" id="goalamt" className="form-control" />
+								</div>
+								<input type="hidden" name="initamt" id="initamt" value="0" />
+								<button type="submit" style={{marginRight: "10px"}} className="btn btn-success btn-large">
+				  				<span className="glyphicon glyphicon-plus" aria-hidden="true">+</span>
+								</button>
+								<button onClick={this.toggleEdit} type="button" className="btn btn-danger btn-large">
+									<span className="glyphicon glyphicon-minus" aria-hidden="true">-</span>
+								</button>
 
-		);
+							</form>
+
+						</div>
+					</div>
+				}
+				{!this.state.editing &&
+					<button onClick={this.toggleEdit} type="button" className="btn btn-success btn-large">
+	  				<span className="glyphicon glyphicon-plus" aria-hidden="true">+</span>
+					</button>
+				}
+			</div>
+		)
 	}
 }
 
@@ -18,6 +64,8 @@ class DashItem extends Component {
 	}
 
 	render() {
+		var ratio = parseInt(this.props.amount)/parseInt(this.props.goal)*100;
+		var filled = ratio.toString().concat("%");
 		return (
 			<div className="card">
 				<div className="card-block">
@@ -29,18 +77,12 @@ class DashItem extends Component {
 						</div>
 						<div className="col-sm-8">
 							<div className="meter">
-								<span style={{width: "25%"}}>$34</span>
+								<span style={{width: filled}}>${this.props.amount}</span>
 							</div>
 						</div>
 					</div>
-					<p>{this.props.goal}</p>
+					<p>${this.props.goal}</p>
 				</div>
-				{this.props.tasks.map((task) =>
-					<div key={task.tid} className="card-footer text-muted">
-						<h6>{task.name}</h6>
-						<h8>{task.goal}</h8>
-					</div>
-				)}
 			</div>
 		)
 	}
@@ -55,8 +97,9 @@ class DashList extends Component {
 		return(
 			<div>
 			{this.props.items.map((item) =>
-				<DashItem key={item.id} title={item.title} subtitle={item.subtitle} goal={item.goal} tasks={item.tasks} />
+				<DashItem key={item._id} title={item.itemname} subtitle={item.tasknote} goal={item.goalamt} amount={item.initamt} />
 			)}
+			<DashAdd />
 			</div>
 		)
 	}
@@ -65,29 +108,27 @@ class DashList extends Component {
 export default class Dash extends Component {
 	constructor (props) {
 		super(props);
-		this.items = [
-			{
-				'id': 1,
-				'title': 'Task 1',
-				'subtitle': 'Sample Text',
-				'goal': 100,
-				'tasks': [{'tid': 1, 'name':"weightloss", 'goal': 175}, {'tid': 2, 'name':"weightloss", 'goal': 175}]
-			},
-			{
-				'id': 2,
-				'title': 'Task 2',
-				'subtitle': 'Sample Text',
-				'goal': 50,
-				'tasks': [{'tid': 1, 'name':"weightloss", 'goal': 150}]
-			}
-		];
+		this.state = {items: []};
+
+		this.getItems = this.getItems.bind(this);
+
+	}
+
+	getItems () {
+		axios.get('/users/goals').then((res) => {
+			this.setState({items: res.data});
+		});
+	}
+
+	componentDidMount() {
+		this.getItems();
 	}
 
 	render() {
 		return (
 			<div>
 				<h1>Hi</h1>
-				<DashList items={this.items}/>
+				<DashList items={this.state.items}/>
 			</div>
 		)
 	}
