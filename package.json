@@ -5,13 +5,15 @@
   "main": "index.js",
   "scripts": {
     "test": "",
-    "start": "nodemon server.js",
+    "start": "node server.js",
     "lint": "eslint app"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.16.1",
     "body-parser": "^1.17.1",
+    "cookie-parser": "^1.4.3",
     "mongodb": "^2.2.25",
     "nodemon": "^1.11.0",
     "react": "^15.4.2",

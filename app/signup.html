@@ -213,6 +213,7 @@
             <input type="text" class="form-control" id="creditcardnumber" placeholder="Card Number" name="creditcardnumber" pattern="[0-9]{13,16}" required/>
           </div>
           <div class="row">
+<<<<<<< HEAD
             <div class="form-group col-sm-6">
               <label class="form-label">Name</label>
               <input type="text" class="form-control" name="cardname" id="cardname" placeholder="Name" required/>
@@ -224,6 +225,22 @@
             <div class="form-group col-sm-2">
               <label class="form-label">CVV</label>
               <input type="text" class="form-control" name="cvv" id="cvv" placeholder="CVV" required/>
+=======
+            <div class="col-sm-6">
+              <div class="row">
+                <div class="form-group col-sm-6">
+                  <label class="form-label">Amount</label>
+                  <input type="number" name="amount" id="amount" class="form-control" min="0.01" step="0.01" max="2500" value="10.00"  required/>
+                </div>
+                <div class="form-group col-sm-6">
+                  <label class="from-label">Frequency</label>
+                  <select class="form-control" id="frequency" name="frequency" required>
+                    <option value="Weekly">Weekly</option>
+                    <option value="Monthly">Monthly</option>
+                  </select>
+                </div>
+              </div>
+>>>>>>> origin/master
             </div>
           </div>
 
