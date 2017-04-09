@@ -1,0 +1,57 @@
+
+body {
+	font-family: "Montserrat", sans-serif;
+}
+div#top {
+  width: 100vw;
+  height: 12vh;
+  background: #07d;
+}
+
+#title {
+	color: white;
+	font-family: "Pacifico", sans-serif;
+}
+
+#title:hover {
+	text-decoration: none;
+}
+
+.card-header {
+	font-family: "Pacifico", sans-serif;
+	text-align: center;
+	background-color: #07d;
+	color: white;
+}
+
+.card-title, .card-text {
+	text-align: center;
+}
+
+.next-button {
+	font-family: "Pacifico", sans-serif;
+}
+
+#login-container {
+	margin-top: 15vh;
+}
+
+#button-container {
+	align-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+#card-container {
+	margin-top: 10vh;
+}
+
+.create-button {
+	height: 20vh;
+	width: 30vh;
+	font-size: 1.5rem;
+	word-wrap: break-word;
+	text-align: center;
+	font-family: "Pacifico", sans-serif;
+	margin-top: 15vh;
+}

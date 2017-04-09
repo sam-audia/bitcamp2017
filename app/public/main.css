@@ -52,7 +52,7 @@ div.#front-info h1 {
 div#triangle {
   width: 0px;
   height: 0px;
-  border-top: 230px solid #48B;
+  border-top: 230px solid #07d;
   border-left: 230px solid transparent;
   float:right;
 }
