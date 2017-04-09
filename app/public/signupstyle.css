@@ -1,6 +1,7 @@
 
 body {
 	font-family: "Montserrat", sans-serif;
+	overflow-x: hidden;
 }
 div#top {
   width: 100vw;
