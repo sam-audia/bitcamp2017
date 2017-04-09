@@ -2,6 +2,7 @@ var path = require('path');
 var webpack = require('webpack');
 var express = require('express');
 var bodyParser = require('body-parser');
+var cookieParser = require('cookie-parser');
 var MongoClient = require('mongodb').MongoClient;
 var config = require('./webpack.config');
 
@@ -17,6 +18,8 @@ app.use(require('webpack-hot-middleware')(compiler));
 
 app.use(bodyParser.urlencoded({extended: true}));
 
+app.use(cookieParser());
+
 MongoClient.connect('mongodb://admin:admin@ds035806.mlab.com:35806/piggybank', (err, database) => {
 	if (err) return console.log(err);
 	db = database;
@@ -30,22 +33,30 @@ app.get('/login', function(req, res) {
 	res.sendFile(path.join(__dirname, 'app/signup.html'));
 })
 
-app.post('/login', function(req, res) {
-	db.collection('users').save(req.body, (err, result) => {
+app.get('/users/goals', function(req, res) {
+	var uid = req.cookies.uid;
+	res.send(uid);
+})
+
+app.post('/users/goals', function(req, res) {
+	req.body.uid = req.cookies.uid;
+	db.collection('goals').insert(req.body, (err, result) => {
 		if (err) return console.log(err);
 
-		res.redirect('/app/user/' + req.body.email);
+		res.redirect('/app/user/' + req.body._id);
+	})
+})
+
+app.post('/login', function(req, res) {
+	db.collection('users').insert(req.body, (err, result) => {
+		if (err) return console.log(err);
+
+		res.cookie('uid', req.body._id);
+		res.redirect('/app/user/' + req.body._id);
 	})
 });
 
-app.use('/', express.static('app/public'))
-
-
-/*.get('/static/', function(req, res) {
-	res.sendFile(path.join(__dirname, '/app/static/index.html'));
-});*/
-
-//app.use('/static', express.static(path.join(__dirname, '/app/static/')));
+app.use('/', express.static('app/public'));
 
 app.listen(3000, function(err) {
 	if(err) {

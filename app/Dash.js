@@ -1,5 +1,17 @@
 import React, { Component } from 'react';
 
+class DashAdd extends Component {
+	constructor(props) {
+		super(props);
+	}
+
+	render() {
+		return (
+
+		);
+	}
+}
+
 class DashItem extends Component {
 	constructor (props) {
 		super(props);
@@ -10,7 +22,17 @@ class DashItem extends Component {
 			<div className="card">
 				<div className="card-block">
 					<h4 className="card-title">{this.props.title}</h4>
-					<h6 className="card-subtitle mb-2 text-muted">{this.props.subtitle}</h6>
+
+					<div className="row">
+						<div className="col-sm-4">
+							<h6 className="card-subtitle mb-2 text-muted">{this.props.subtitle}</h6>
+						</div>
+						<div className="col-sm-8">
+							<div className="meter">
+								<span style={{width: "25%"}}>$34</span>
+							</div>
+						</div>
+					</div>
 					<p>{this.props.goal}</p>
 				</div>
 				{this.props.tasks.map((task) =>
