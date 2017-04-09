@@ -38,16 +38,16 @@
 							<div class="modal-body">
 
 								<!-- Form to collect login credentials -->
-								<form>
+								<form action="/auth" method="POST">
 									<div class="form-group">
 									  <label class="form-label">Email</label>
 								  	<input type="email" class="form-control" name="email" id="email" placeholder="example@gmail.com">
 									</div>
 								  	<div class="form-group">
 									  <label class="form-label">Password</label>
-									  <input type="password" name="password" id="email" class="form-control" />
+									  <input type="password" name="password" id="password" class="form-control" />
 									</div>
-								  <input type="submit" value="Login" class="btn btn-primary" data-dismiss="modal" />
+								  <input type="submit" value="Login" class="btn btn-primary" />
 								</form>
 							</div>
 						</div>
