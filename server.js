@@ -35,8 +35,6 @@ app.get('/login', function(req, res) {
 })
 
 app.post('/auth', function(req, res) {
-	console.log("hey");
-	console.log(req.body.email);
 	db.collection('users').findOne({"email": req.body.email}, (err, doc) => {
 		if(req.body.password === doc.password)
 		{
